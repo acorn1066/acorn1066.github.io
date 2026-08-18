@@ -172,6 +172,14 @@
           <div class="tags"><span class="tag">MyBatis</span><span class="tag">Thymeleaf</span></div>
         </div>
       </div>
+      <div class="proj-card" data-project="thecluster">
+        <div class="proj-thumb"><img src="/images/thecluster-thumb.png" alt="더클러스터 스크린샷"></div>
+        <div class="proj-body">
+          <h3>더클러스터</h3>
+          <p>Mastodon 기반 TTRPG 커뮤니티용 챗봇과 관리자 대시보드. 다이스 판정부터 턴제 전투, 거점 디펜스 시스템까지 1인으로 설계·개발·운영했습니다.</p>
+          <div class="tags"><span class="tag">바이브 코딩</span><span class="tag">Python</span><span class="tag">FastAPI</span></div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -267,6 +275,20 @@
         '팀장 및 전체 도메인 설계',
         '책 리뷰 게시판 기능 구현',
         '관리자 기능 구현'
+      ]
+    },
+    thecluster: {
+      thumbImg: '/images/thecluster-thumb.png',
+      title: '더클러스터',
+      meta: '개인 프로젝트 · 1인 개발',
+      desc: 'Mastodon 인스턴스 위에서 멘션으로 동작하는 TTRPG 커뮤니티 챗봇입니다. 다이스 판정, 파티 대 에너미 턴제 전투, 거점 디펜스, 제작/인벤토리 시스템을 직접 설계했고, 이를 운영하는 FastAPI 관리자 대시보드까지 만들어 AWS EC2에 배포·운영했습니다.',
+      github: 'https://github.com/acorn1066/thecluster',
+      tags: ['바이브 코딩','Python','Mastodon.py','FastAPI','Jinja2','SQLite','PostgreSQL','AWS EC2','nginx'],
+      roles: [
+        '전체 아키텍처 설계 및 단독 개발 (봇/관리자 대시보드)',
+        '파티 vs 에너미 턴제 전투 엔진 및 거점 디펜스 시스템 구현',
+        'FastAPI 기반 관리자 대시보드 구축 (유저/아이템/로그 관리, 실시간 서버 상태)',
+        'AWS EC2 배포 및 systemd 기반 운영'
       ]
     }
   };
