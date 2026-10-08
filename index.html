@@ -71,11 +71,11 @@
   #about p{ font-size:clamp(18px,2.2vw,22px); max-width:720px; }
 
   #projects{ padding:clamp(60px,8vw,120px) 0; border-top:1px solid var(--border); }
-  .proj-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; margin-top:8px; }
+  .proj-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr)); gap:24px; margin-top:8px; }
   .proj-card{ border:1px solid var(--border); border-radius:14px; overflow:hidden; transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease; background:var(--bg); cursor:pointer; }
   .proj-card:hover, .proj-card:focus-visible{ transform:translateY(-4px); border-color:var(--accent); box-shadow:0 12px 24px oklch(22% 0.01 250 / 8%); }
   .proj-card:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
-  .proj-thumb{ height:180px; background:linear-gradient(135deg,var(--chip),var(--border)); display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--muted); transition:transform .4s ease; overflow:hidden; }
+  .proj-thumb{ height:220px; background:linear-gradient(135deg,var(--chip),var(--border)); display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--muted); transition:transform .4s ease; overflow:hidden; }
   .proj-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
   .proj-card:hover .proj-thumb{ transform:scale(1.03); }
   .proj-body{ padding:20px; }
@@ -92,6 +92,7 @@
   .modal-thumb img{ width:100%; height:100%; object-fit:cover; object-position:top; display:block; }
   .modal-link{ display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:500; padding:10px 18px; border:1px solid var(--border); border-radius:8px; margin-top:4px; transition:border-color .2s,color .2s,transform .2s; }
   .modal-link:hover{ border-color:var(--accent); color:var(--accent); transform:translateY(-2px); }
+  .modal-note{ font-size:13px; color:var(--muted); margin-top:14px; }
   .modal-close{ position:absolute; top:16px; right:16px; width:32px; height:32px; border-radius:50%; background:var(--bg); border:1px solid var(--border); font-size:18px; cursor:pointer; line-height:1; transition:border-color .2s,color .2s; }
   .modal-close:hover{ border-color:var(--accent); color:var(--accent); }
   .modal-content{ padding:28px; }
@@ -168,6 +169,14 @@
   <section id="projects">
     <div class="label">PROJECTS</div>
     <div class="proj-grid">
+      <div class="proj-card" data-project="arkim" tabindex="0" role="button" aria-label="아키엠 프로젝트 상세 보기">
+        <div class="proj-thumb"><img src="/images/arkim-thumb.webp" alt="아키엠 앱 화면" width="1898" height="951" loading="lazy"></div>
+        <div class="proj-body">
+          <h3>아키엠 (ARKIM)</h3>
+          <p>건축 감리 현장용 웹·앱 서비스. 회사 개발팀에서 해체감리 기능, 보고서 PDF 자동 생성, 결제 연동 등을 개발했습니다.</p>
+          <div class="tags"><span class="tag">Spring MVC</span><span class="tag">MyBatis</span><span class="tag">MySQL</span></div>
+        </div>
+      </div>
       <div class="proj-card" data-project="ddeonabom" tabindex="0" role="button" aria-label="떠나봄 프로젝트 상세 보기">
         <div class="proj-thumb"><img src="/images/ddeonabom-thumb.webp" alt="떠나봄 스크린샷" width="1898" height="951" loading="lazy"></div>
         <div class="proj-body">
@@ -313,6 +322,23 @@
 <script>
 (function(){
   var projects = {
+    arkim: {
+      thumbImg: '/images/arkim-thumb.webp',
+      title: '아키엠 (ARKIM)',
+      meta: '씨엠엑스 · 회사 업무 · 개발팀',
+      desc: '건축 감리원이 현장에서 사진 촬영, 점검, 감리일지 작성부터 각종 감리 보고서 출력까지 할 수 있는 감리 업무 서비스입니다. 모바일 앱과 PC 웹으로 제공되며, 개발팀의 일원으로 기능 개발과 유지보수를 맡았습니다.',
+      link: 'https://www.arkim.kr',
+      linkLabel: '서비스 홈페이지',
+      note: '회사 업무로 진행한 프로젝트라 소스 코드는 공개할 수 없습니다. 화면은 공개된 사용자 매뉴얼에서 가져왔습니다.',
+      tags: ['Java','Spring MVC','Spring Security','MyBatis','MySQL','JSP','jQuery','JasperReports','Apache POI','Tomcat','SVN'],
+      roles: [
+        '해체감리 기능 개발 (해체공사 안전점검표, 스마트 점검, 해체감리 보고서)',
+        '감리일지·안전점검 등 감리 보고서 PDF 자동 생성 (JasperReports)',
+        '현장 점검·계측 기능, 아파트 동·호 도면 표시 기능 개발',
+        '체크리스트 엑셀 일괄 업로드 (Apache POI)',
+        'KCP·페이코·페이앱 결제 연동'
+      ]
+    },
     ddeonabom: {
       thumbImg: '/images/ddeonabom-thumb.webp',
       title: '떠나봄',
@@ -375,6 +401,8 @@
     tagsEl.innerHTML = p.tags.map(function(t){ return '<span class="tag">'+t+'</span>'; }).join('');
     rolesEl.innerHTML = p.roles.map(function(r){ return '<li>'+r+'</li>'; }).join('');
     githubEl.innerHTML = p.github ? '<a class="modal-link" href="'+p.github+'" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:6px"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.4 7.86 10.93.57.1.78-.25.78-.55v-2.1c-3.2.7-3.87-1.35-3.87-1.35-.53-1.3-1.28-1.66-1.28-1.66-1.05-.7.08-.69.08-.69 1.16.08 1.77 1.2 1.77 1.2 1.03 1.75 2.7 1.25 3.36.95.1-.75.4-1.25.73-1.53-2.55-.29-5.23-1.27-5.23-5.67 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.59.23 2.76.11 3.05.73.8 1.18 1.82 1.18 3.07 0 4.41-2.69 5.38-5.25 5.66.41.36.78 1.06.78 2.15v3.19c0 .3.21.65.79.55A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z"/></svg>GitHub 레포 보기</a>' : '';
+    if(p.link) githubEl.innerHTML += '<a class="modal-link" href="'+p.link+'" target="_blank" rel="noopener">'+p.linkLabel+' ↗</a>';
+    if(p.note) githubEl.innerHTML += '<p class="modal-note">'+p.note+'</p>';
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
     document.getElementById('modalCloseBtn').focus();
