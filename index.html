@@ -163,7 +163,7 @@
 
   <section id="about">
     <div class="label">ABOUT</div>
-    <p>건축 감리 회사 개발팀에서 5년 6개월간 현장 감리용 웹 애플리케이션을 개발·운영했습니다. 보고서 자동 생성, 현장 점검, 결제 연동처럼 실제 현장에서 매일 쓰는 기능을 맡았습니다. 이후 부트캠프에서 Spring Boot와 React를 체계적으로 다시 다졌고, 개인 프로젝트 '더클러스터'에서는 챗봇과 관리자 대시보드를 기획부터 배포·운영까지 혼자 만들었습니다. 백엔드부터 화면, 배포까지 전 과정을 다룰 수 있는 개발자입니다.</p>
+    <p>건축 감리 회사 개발팀에서 5년 6개월간 현장 감리용 웹 애플리케이션을 개발·운영했습니다. 감리 보고서 출력, 해체감리, 현장 점검, 결제 연동처럼 실제 현장에서 매일 쓰는 기능을 맡았습니다. 이후 부트캠프에서 Spring Boot와 React를 체계적으로 다시 다졌고, 개인 프로젝트 '더클러스터'에서는 챗봇과 관리자 대시보드를 기획부터 배포·운영까지 혼자 만들었습니다. 백엔드부터 화면, 배포까지 전 과정을 다룰 수 있는 개발자입니다.</p>
   </section>
 
   <section id="projects">
@@ -173,7 +173,7 @@
         <div class="proj-thumb"><img src="/images/arkim-thumb.webp" alt="아키엠 앱 화면" width="1898" height="951" loading="lazy"></div>
         <div class="proj-body">
           <h3>아키엠 (ARKIM)</h3>
-          <p>건축 감리 현장용 웹·앱 서비스. 회사 개발팀에서 해체감리 기능, 보고서 PDF 자동 생성, 결제 연동 등을 개발했습니다.</p>
+          <p>건축 감리 현장용 웹·앱 서비스. 회사 개발팀에서 해체감리 기능, AIReport 기반 감리 보고서, 결제 연동 등을 개발했습니다.</p>
           <div class="tags"><span class="tag">Spring MVC</span><span class="tag">MyBatis</span><span class="tag">MySQL</span></div>
         </div>
       </div>
@@ -220,8 +220,7 @@
         <span class="chip">JSP / Servlet</span>
         <span class="chip">Thymeleaf</span>
         <span class="chip">Jinja2</span>
-        <span class="chip">JasperReports</span>
-        <span class="chip">Apache POI</span>
+        <span class="chip">AIReport</span>
       </div>
     </div>
 
@@ -287,8 +286,8 @@
     <div class="exp-item">
       <div class="exp-period mono">2019.07 – 2025.01</div>
       <div class="exp-title">씨엠엑스 · 선임</div>
-      <div class="exp-desc">건축 감리용 웹 애플리케이션 개발팀에서 기능 개발과 유지보수를 맡았습니다. 감리일지·안전점검 보고서 PDF 자동 생성, 현장 점검·계측 기능, 아파트 동·호 도면 표시, 엑셀 일괄 업로드, KCP·페이코 결제 연동을 개발했습니다.</div>
-      <div class="tags"><span class="tag">Spring MVC</span><span class="tag">MyBatis</span><span class="tag">MySQL</span><span class="tag">JSP</span><span class="tag">jQuery</span><span class="tag">JasperReports</span><span class="tag">Apache POI</span></div>
+      <div class="exp-desc">건축 감리용 웹 애플리케이션 개발팀에서 기능 개발과 유지보수를 맡았습니다. 해체감리 기능, AIReport를 이용한 감리 보고서 양식, 현장 점검·계측 기능, 아파트 동·호 도면 표시, KCP·페이코 결제 연동을 개발했습니다.</div>
+      <div class="tags"><span class="tag">Spring MVC</span><span class="tag">MyBatis</span><span class="tag">MySQL</span><span class="tag">JSP</span><span class="tag">jQuery</span><span class="tag">AIReport</span></div>
     </div>
   </section>
 </div>
@@ -327,15 +326,14 @@
       title: '아키엠 (ARKIM)',
       meta: '씨엠엑스 · 회사 업무 · 개발팀',
       desc: '건축 감리원이 현장에서 사진 촬영, 점검, 감리일지 작성부터 각종 감리 보고서 출력까지 할 수 있는 감리 업무 서비스입니다. 모바일 앱과 PC 웹으로 제공되며, 개발팀의 일원으로 기능 개발과 유지보수를 맡았습니다.',
-      link: 'https://www.arkim.kr',
+      link: 'https://arkim.cmx.co.kr/arkim2/login_archimup.cmx',
       linkLabel: '서비스 홈페이지',
       note: '회사 업무로 진행한 프로젝트라 소스 코드는 공개할 수 없습니다. 화면은 공개된 사용자 매뉴얼에서 가져왔습니다.',
-      tags: ['Java','Spring MVC','Spring Security','MyBatis','MySQL','JSP','jQuery','JasperReports','Apache POI','Tomcat','SVN'],
+      tags: ['Java','Spring MVC','Spring Security','MyBatis','MySQL','JSP','jQuery','AIReport','Tomcat','SVN'],
       roles: [
         '해체감리 기능 개발 (해체공사 안전점검표, 스마트 점검, 해체감리 보고서)',
-        '감리일지·안전점검 등 감리 보고서 PDF 자동 생성 (JasperReports)',
+        'AIReport(상용 리포팅 도구)로 감리 보고서 양식 개발·유지보수',
         '현장 점검·계측 기능, 아파트 동·호 도면 표시 기능 개발',
-        '체크리스트 엑셀 일괄 업로드 (Apache POI)',
         'KCP·페이코·페이앱 결제 연동'
       ]
     },
